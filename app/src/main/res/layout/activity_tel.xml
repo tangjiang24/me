@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".telphone.TelActivity">
+<android.support.v7.widget.Toolbar
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?actionBarSize">
+</android.support.v7.widget.Toolbar>
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize">
+        <TextView
+            android:text="电话号码："
+            android:textSize="16sp"
+            android:gravity="center_vertical"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"/>
+        <EditText
+            android:id="@+id/et_phone"
+            android:inputType="phone"
+            android:hint="外拨号码"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize">
+        <TextView
+            android:text="重播间隔："
+            android:textSize="16sp"
+            android:gravity="center_vertical"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"/>
+        <EditText
+            android:id="@+id/et_interval"
+            android:hint="重播间隔(s)"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_call"
+        android:text="拨打"
+        android:textSize="16sp"
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btn_stop"
+        android:text="停止"
+        android:textSize="16sp"
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

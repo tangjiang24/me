@@ -1,0 +1,185 @@
+[
+  {
+    "id": 1008610,
+    "placeGroupCode": "",
+    "placeKey": "",
+    "adName": "食品溯源",
+    "planName": "recognition",
+    "category":"location",
+    "statue":"enable_quick",
+    "type": 1,
+    "action": 18,
+    "url": "assets://picture/icon_app_recognition.png",
+    "param": {
+      "title": "packageName,usePackageName",
+      "desc": "http://www.unilifemedia.com?packageName=com.haier.recognition&usePackageName=1"
+    }
+  },
+  {
+    "id": 1008610,
+    "placeGroupCode": "",
+    "placeKey": "",
+    "adName": "食材管理",
+    "planName": "foodmng",
+    "category":"location",
+    "statue":"enable_quick",
+    "type": 1,
+    "action": 18,
+    "url": "assets://picture/icon_app_foodmanager.png",
+    "param": {
+      "infoId": "com.unilife.fridge.AtyFoodMng"
+    }
+  },
+  {
+    "id": 1008610,
+    "placeGroupCode": "",
+    "placeKey": "",
+    "adName": "食谱",
+    "planName": "recipe",
+    "category":"location",
+    "statue":"enable_quick",
+    "type": 1,
+    "action": 18,
+    "url": "assets://picture/icon_app_recipe.png",
+    "param": {
+      "infoId": "com.unilife.fridge.AtyRecipe"
+    }
+  },
+
+  {
+    "id": 1008610,
+    "placeGroupCode": "",
+    "placeKey": "",
+    "adName": "商城",
+    "planName": "shop",
+    "category":"location",
+    "statue":"enable_quick",
+    "type": 1,
+    "action": 18,
+    "url": "assets://picture/icon_app_shop.png",
+    "param": {
+      "infoId": "com.unilife.fridge.shop.main.new"
+    }
+  },
+  {
+    "id": 1008610,
+    "placeGroupCode": "",
+    "placeKey": "",
+    "adName": "影音",
+    "planName": "media",
+    "category":"location",
+    "statue":"enable_quick",
+    "type": 1,
+    "action": 18,
+    "url": "assets://picture/icon_app_media.png",
+    "param": {
+      "infoId": "com.unilife.fridge.media.main"
+    }
+  },
+
+  {
+    "id": 1008610,
+    "placeGroupCode": "",
+    "placeKey": "",
+    "adName": "相册",
+    "planName": "album",
+    "category":"location",
+    "statue":"enable_quick",
+    "type": 1,
+    "action": 18,
+    "url": "assets://picture/icon_app_album.png",
+    "param": {
+      "infoId": "com.unilife.fridge.photoalbum"
+    }
+  },
+  {
+    "id": 1008610,
+    "placeGroupCode": "",
+    "placeKey": "",
+    "adName": "留言板",
+    "planName": "messageboard",
+    "category":"location",
+    "statue":"enable_quick",
+    "type": 1,
+    "action": 18,
+    "url": "assets://picture/icon_app_message.png",
+    "param": {
+      "infoId": "com.unilife.fridge.action.lookmessage"
+    }
+  },
+  {
+    "id": 1008610,
+    "placeGroupCode": "",
+    "placeKey": "",
+    "adName": "定时器",
+    "planName": "timer",
+    "category":"location",
+    "statue":"enable_quick",
+    "type": 1,
+    "action": 18,
+    "url": "assets://picture/icon_app_clock.png",
+    "param": {
+      "infoId": "com.unilife.um_timer.ui.activity.MainActivity"
+    }
+  },
+  {
+    "id": 1008610,
+    "placeGroupCode": "",
+    "placeKey": "",
+    "adName": "家庭膳食",
+    "planName": "familymeal",
+    "category":"location",
+    "statue":"enable_quick",
+    "type": 1,
+    "action": 18,
+    "url": "assets://picture/icon_app_family_meal.png",
+    "param": {
+      "infoId": "com.unilife.fridge.haierbase.familymeals10.action"
+    }
+  },
+  {
+    "id": 1008610,
+    "placeGroupCode": "",
+    "placeKey": "",
+    "adName": "母婴专区",
+    "planName": "motherBaby",
+    "category":"location",
+    "statue":"enable_quick",
+    "type": 1,
+    "action": 18,
+    "url": "assets://picture/icon_app_mother_baby.png",
+    "param": {
+      "infoId": "com.unilife.fridge.haiercommonmab.ui.activity.MABSaveActivity"
+    }
+  },
+  {
+    "id": 1008610,
+    "placeGroupCode": "",
+    "placeKey": "",
+    "adName": "美食推荐",
+    "planName": "recommendRecipe",
+    "category":"location",
+    "statue":"enable_quick",
+    "type": 1,
+    "action": 18,
+    "url": "assets://picture/icon_app_recommend_recipe.png",
+    "param": {
+      "infoId": "com.unilife.fridge.haierbase.familymeals10.action"
+    }
+  },
+  {
+    "id": 1008610,
+    "placeGroupCode": "",
+    "placeKey": "",
+    "adName": "视频通话",
+    "planName": "videoPhone",
+    "category":"location",
+    "statue":"enable_quick",
+    "type": 1,
+    "action": 18,
+    "url": "assets://picture/icon_app_video_phone.png",
+    "param": {
+      "infoId": "com.unilife.fridge.haierbase.familymeals10.action"
+    }
+  }
+]

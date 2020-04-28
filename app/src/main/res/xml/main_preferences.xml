@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.v7.preference.PreferenceCategory
+        android:title="gif">
+        <android.support.v7.preference.Preference
+            android:key="pf_gif_playes"
+            android:title="音量控制"/>
+
+        <android.support.v7.preference.Preference
+            android:key="pf_gif_play"
+            android:title="播放控制"/>
+
+        <android.support.v7.preference.SwitchPreferenceCompat
+            android:key="pf_big_gif"
+            android:defaultValue="false"
+            android:summary="手机流量播放较大时进行提醒"
+            android:title="大图提醒"/>
+        <android.support.v7.preference.SwitchPreferenceCompat
+            android:key="pf_auto_refresh"
+            android:defaultValue="true"
+            android:summary="打开应用智能刷新"
+            android:title="自动刷新"/>
+    </android.support.v7.preference.PreferenceCategory>
+
+    <android.support.v7.preference.PreferenceCategory
+        android:key="pf_common"
+        android:title="常规">
+        <android.support.v7.preference.CheckBoxPreference
+            android:key="pf_bluetooth"
+            android:title="打开蓝牙"
+            android:defaultValue="false"/>
+        <android.support.v7.preference.EditTextPreference
+            android:key="pf_name"
+            android:title="设置姓名"
+            android:summary="姓名"
+            android:defaultValue="科比"
+            android:singleLine="true"
+            android:capitalize="words"
+            android:inputType="text"
+            android:selectAllOnFocus="true"/>
+        <MultiSelectListPreference
+            android:key="pf_select_city"
+            android:entries="@array/city"
+            android:entryValues="@array/country"
+            android:title="选择城市"
+            android:dialogTitle="城市"/>
+        <ListPreference
+            android:key="pf_gif"
+            android:title="城市"
+            android:entries="@array/city"
+            android:entryValues="@array/country"/>
+    </android.support.v7.preference.PreferenceCategory>
+</android.support.v7.preference.PreferenceScreen>

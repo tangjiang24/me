@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<ListPreference
+    android:key="pf_gif"
+    android:title="城市"
+    android:dialogTitle="城市列表"
+    android:entries="@array/city"
+    android:entryValues="@array/country"/>
+
+</PreferenceScreen>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:layout_width="517px"
+    android:layout_height="1005px">
+    <LinearLayout
+        android:background="@color/white"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="70px"
+        android:paddingLeft="58px"
+        android:paddingRight="58px"
+        android:orientation="vertical"
+        android:layout_width="517px"
+        android:layout_height="919px">
+        <TextView
+            android:id="@+id/guide_fuction"
+            android:text="添加食材"
+            android:textColor="#616161"
+            android:textSize="21px"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/guide_describ"
+            android:text="点击拖动食材到不同区域"
+            android:layout_marginTop="23px"
+            android:textColor="#B6B6B6"
+            android:textSize="18px"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_guide"
+            android:layout_marginTop="60px"
+            android:layout_width="402px"
+            android:layout_height="554px">
+        </android.support.v4.view.ViewPager>
+
+        <LinearLayout
+            android:id="@+id/rg_guide"
+            android:layout_marginTop="115px"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_cancle"
+        android:src="@drawable/cancle"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30px"
+        android:layout_width="56px"
+        android:layout_height="56px"/>
+</LinearLayout>

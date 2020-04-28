@@ -1,0 +1,117 @@
+\t Note to user: Before you use this intelligent fridge system software and related services, please carefully read the provisions of Usage Protocol for Final User (hereinafter referred to as Protocol). Some functions of the software is designed to use under Internet connection based on WIFI. If you click to accept these, it represents you agree and accept all provisions of this Protocol and will comply with relevant protocols to accept all kinds of services and software system updating supplied by Shanghai UniLife Information Technology Co., Ltd (hereinafter referred to as UniLife for short) under Internet connection.
+\n
+I. Service Description
+\n
+\tUniLife provides you with services including but not limited to:
+        \n
+\t1.UniLife provides client software platform (including fridge and mobile phone) to users， which include totally updated software versions or those to be updated in the future.
+        \n
+\t2. Under networking state, UniLife utilizes directly owned or operated server to actively push or base on user direction to provide multiform content, including news, data, characters, software, music, audio message, photos, figures, information or other data and their links.
+        \n
+\t3.Under networking state, this software platform can enable you to online use some software and services of the third party, and interactive interface will correspondingly give hint before you use software and/or services of the third party. This may result in failure of several functions being normally used, please be understanding.
+        \n
+\t4.Under non-networking state, users can only use softwares directly related to fridge temperature, mode function, food management, etc.
+        \n
+        \n
+II. User Behavior
+        \n
+\t1.When user registers an account under direction, make sure the registration information is true, correct and complete so that UniLife can provide services according to these information. If above registration information is changed, you should revise them in system setting within ten days. Regarding service problem due to incorrect registration information, UniLife will not assume any responsibilities.
+        \n
+\t2.You should keep your account and password confidential and safe. You should assume complete responsibility for activities that anyone utilizes your account and password to conduct. In case of any unauthorized usage of user’s account and password or any other safety problem, users should immediately and effectively inform UniLife company.
+        \n
+\t3.User agrees and accepts that UniLife and related cooperative companies send products promotion, services or other relevant business information via client(including fridge and mobile phone). Other information includes but is not limited to notification, propaganda, advertisement, etc.
+        \n
+        \n
+III. Software  Services of the Third Party
+        \n
+\t1.In order to enable user to better enjoy services, UniLife may provide link to the third party website or resource. UniLife holds no responsibilities to online service of any third party. Any transactions between you and any third party regarding its online service together with any other provisions related to such transaction wholly belongs to affairs between you and such third party.
+        \n
+\t2.When you use software or online service of the third party, you are bound by provisions related to this software or online service of the third party. UniLife is entitled to revise or stop online service of any third party at any time due to any reason.
+        \n\n
+
+IV. User privacy
+        \n
+\t1. When registering an account, user should provide personal information. UniLife collects personal information in order to facilitate fridge manufacturer to provide after-sale service of specific product, supply personalized online service to user as much as possible, and provide a convenient approach to advertiser for touching suitable users. In this process, advertiser is unable to touch user’s personal information. UniLife will not open, edit or disclose personal information or non-public content stored in system without legal authorization of user, unless:
+        \n
+\t\t1) is stipulated by related laws and regulation or legal service procedure of UniLife;
+        \n
+\t\t2) in case of emergency, to safeguard the user and public rights and interests;
+        \n
+\t\t3) to safeguard the trademark right, patent right and any other legitimate interest of UniLife;
+        \n
+\t\t4) other personal information required to be open, editted or disclosed.
+        \n
+
+\t2. In the following (including but not limit to) conditions, UniLife is entitled to use personal information of user:
+        \n
+\t\t1) In case of promotion or lottery draw, UniLife may share personal information of user with sponsor.
+        \n
+\t\t2) Unilife will give a presentation of the service supplied by company to future partner, advertiser and other third party as well as for other legal purpose through disclosure of statistic data of total user.
+        \n
+\t\t3) When user purchases the goods or services listed in this system platform, the information obtained by UniLife and provided by user (for example, contact info of user) will be supplied to traders, then these traders will collect data; however, UniLife holds no responsibilities to these operation of traders.
+        \n\n
+
+V. Content Management
+        \n
+\tUniLife holds the responsibilities of content issuing and management and commits to comply with relevant regulations in China, not utilizing this software platform to produce, duplicate, issue or spread information below:
+        \n
+\t\t1) what goes against basic principle stipulated by constitution;
+        \n
+\t\t2) what harms to nation unity and sovereignty and territorial integrity;
+        \n
+\t\t3) what intends to reveal state secret, harm to national security or damage to state honor and interests;
+        \n
+\t\t4) what incites ethnic hatred and discrimination, breaks national unity, or infringes national customs;
+        \n
+\t\t5) what advocates heresy and superstition;
+        \n
+\t\t6) what disturbs social order or destroys social stability;
+        \n
+\t\t7) what induces delinquency of teenagers or depicts violence, sex, gambling and terrorist activities;
+        \n
+\t\t8) what insults or slander others, or infringes civic personal privacy or legitimate interests;
+        \n
+\t\t9) what endangers social morality or impairs national excellent cultural traditions;
+        \n
+\t\t10) other contents prohibited by related laws, administrative regulations and the state.
+        \n\n
+
+VI. Alteration and Termination of Software, Services and protocol
+        \n
+\t1. Unilife company in entitled to not only alter the content of this system software (including but not limit to upgrading, updating, adding, reducing, deducing, etc.) and related services as well as this protocol, but also terminate software/related services/this protocol.
+        \n
+\t2. In case of discovering potential risks in this system software to affect important fuctional usage of products, UniLife is entitled to carry out remote updating of software.
+        \n
+\t3． User has independant right to unilaterally decide to terminate the software and related services in this system that need to be used under network (i.e. close WIFI function in setting) at any moment. If user continues to use software and related service under network after related content is altered, this is deemed that user accepts related content alteration.
+        \n\n
+
+
+VII. Disclaimer
+        \n
+\t1. Regarading products and services supplied by the third party, users should identify their authenticity by themselves and carefully prevent risks. Otherwise, no matter what reasons there are, both Qingdao Haier Special Fridge Co., Ltd and UniLife hold no direct, indirect, joint or derived loss and responsibilities to transactions or actions between any user and third party.
+        \n
+\t2. Qingdao Haier Special Fridge Co., Ltd and Unilife holds no responsibilities to (including but not limit to) following situation:
+        \n
+\t\t1) services supplied totally suit to usage demand of user;
+        \n
+\t\t2) services supplied are not disturbed, and are in time, safe, reliable or show no error;
+        \n
+\t\t3) services supplied and any product, service or other information acquired via this system platform accord with user expectation.
+        \n
+\t3. In case that UniLife has already clearly expressed the alteration of providing method of network service and reminded user of points for attention, all consequences caused by operation of user not according to requirements will be assumed by users independently.
+        \n
+\t4. All push information content involving in this system is provided by UniLife. Qingdao Haier Special Fridge Co., Ltd will not assume any disputes or legal responsibilities due to legitimacy and health of content.
+        \n\n
+VIII. User Feedback and Disposal
+        \n
+\tIf user has any suggestion or complaint on content and service supplied by this system, it is feasible to send e-mail to service@unilifemedia.com particularly set by UniLife to receive user feedback, or dial 4006009367, the support staff will immediately communicate and handle with these.
+        \n\n
+
+VIV. Others
+        \n
+\t1. In case that total or partial of any provisions of this protocol become invalid or with no executive force, the reminder provisions of the protocol should still be effective and binding.
+        \n
+\t2. Any problems rising during execution of this service protocol, Qingdao Haier Special Fridge Co., Ltd, UniLife company and users will resolve them through amicable consultation.
+        \n
+\t3. Qingdao Haier Special Fridge Co., Ltd and UniLife have the right of final interpretation to all above provisions within legally allows scope.
+        \n
