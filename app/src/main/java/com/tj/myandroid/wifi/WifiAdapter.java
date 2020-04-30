@@ -20,7 +20,6 @@ class WifiAdapter extends BaseQuickAdapter<WifiItem,BaseViewHolder> {
         helper.setText(R.id.tv_name,item.getSsid())
                 .setGone(R.id.iv_connected,item.isConnected())
                 .setGone(R.id.iv_lock,!item.isNoPwd())
-
                 .setGone(R.id.rl_pwd,item.isInputing());
 
         helper.getView(R.id.btn_connect).setOnClickListener(new View.OnClickListener() {

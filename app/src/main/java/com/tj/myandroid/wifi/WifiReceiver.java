@@ -25,6 +25,7 @@ public class WifiReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         String action = intent.getAction();
         if(action.equals( WifiManager.NETWORK_STATE_CHANGED_ACTION)){
+            Log.i(TAG, "接受到网络连接变化的广播");
             if(isFirst){
                 isFirst = !isFirst;
                 return;

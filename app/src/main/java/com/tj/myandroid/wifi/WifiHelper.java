@@ -1,5 +1,6 @@
 package com.tj.myandroid.wifi;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.IntentFilter;
 import android.net.wifi.ScanResult;
@@ -25,9 +26,8 @@ public class WifiHelper implements WifiReceiver.WifiReceiverListner {
     private WifiItem wifiItem;
     private Context context;
     private WifiReceiver wifiConnectReceiver;
-    private WifiAdmin mWifiAdmin;
     private WifiConnectCallBack connectCallBack;
-    private WifiScanCallBack wifiScanCallBack;
+    private WifiReceiverCallBack wifiScanCallBack;
     private boolean mReceiverTag = false;   //广播接受者标识
     public static final int CONNECT_WIFI_SUCESS = 1;
     public static final int CONNECT_WIFI_FAIL = 2;
@@ -36,7 +36,6 @@ public class WifiHelper implements WifiReceiver.WifiReceiverListner {
     public WifiHelper(Context context) {
         this.context = context;
         registWifiConnectReceiver();
-        mWifiAdmin = new WifiAdmin(context);
     }
 
     Handler handler = new Handler(){
@@ -84,7 +83,7 @@ public class WifiHelper implements WifiReceiver.WifiReceiverListner {
     @Override
     public void onScanResult() {
         if(wifiScanCallBack != null){
-            List<ScanResult> scanResults = mWifiAdmin.getScanResults();
+            List<ScanResult> scanResults = WifiAdmin.getScanResults(context);
             wifiScanCallBack.onScanWifi(filterResult(scanResults));
         }
     }
@@ -96,8 +95,8 @@ public class WifiHelper implements WifiReceiver.WifiReceiverListner {
         this.wifiItem = wifiItem;
         this.connectCallBack = callBack;
 
-        Log.i(TAG,"是否已经是WiFi连接："+ mWifiAdmin.isWiFiConnected()+"    已连接的ssid:"+ mWifiAdmin.getSSID());
-        if(mWifiAdmin.isWiFiConnected() && ("\"" + wifiItem.getSsid() + "\"").equals(mWifiAdmin.getSSID())){
+        Log.i(TAG,"是否已经是WiFi连接："+ WifiAdmin.isWiFiConnected(context)+"    已连接的ssid:"+ WifiAdmin.getSSID(context));
+        if(WifiAdmin.isWiFiConnected(context) && ("\"" + wifiItem.getSsid() + "\"").equals(WifiAdmin.getSSID(context))){
             handler.sendEmptyMessage(CONNECT_WIFI_SUCESS);
             return;
         }
@@ -105,7 +104,7 @@ public class WifiHelper implements WifiReceiver.WifiReceiverListner {
     }
 
     private void startConnect() {
-        boolean isConnected = mWifiAdmin.connectWifi(wifiItem);
+        boolean isConnected = WifiAdmin.connectWifi(wifiItem,context);
         sendFailMessage("连接超时！",15000);
         if(!isConnected) {
             sendFailMessage("连接失败");
@@ -171,7 +170,7 @@ public class WifiHelper implements WifiReceiver.WifiReceiverListner {
 
             WifiItem wifiItem = new WifiItem();
             wifiItem.setSsid(scanResult.SSID);
-            wifiItem.setLelve(mWifiAdmin.getWifiLevle(scanResult.level,4));
+            wifiItem.setLelve(WifiAdmin.getWifiLevle(scanResult.level,4));
             wifiItem.setConnected(isItemConnected(scanResult));
             if (scanResult.capabilities != null && (scanResult.capabilities.equals(WIFI_AUTH_OPEN) || scanResult.capabilities.equals(WIFI_AUTH_ROAM))) {
                 wifiItem.setNoPwd(true);
@@ -186,10 +185,10 @@ public class WifiHelper implements WifiReceiver.WifiReceiverListner {
 
     private boolean isItemConnected(ScanResult item) {
         boolean isConnected = false;
-        if(mWifiAdmin.getWifiInfo()!=null){
-            String connectSSid = mWifiAdmin.getWifiInfo().getSSID();
+        if(WifiAdmin.getWifiInfo(context)!=null){
+            String connectSSid = WifiAdmin.getWifiInfo(context).getSSID();
             String ssid = "\"" + item.SSID + "\"";
-            if(ssid.equals(connectSSid) && mWifiAdmin.isWiFiConnected()){
+            if(ssid.equals(connectSSid) && WifiAdmin.isWiFiConnected(context)){
                 isConnected = true;
             }
         }
@@ -201,10 +200,10 @@ public class WifiHelper implements WifiReceiver.WifiReceiverListner {
         public void onConnectFail(String msg);
     }
 
-    public void setWifiScanCallBack(WifiScanCallBack wifiScanCallBack){
+    public void setWifiReceiverCallBack(WifiReceiverCallBack wifiScanCallBack){
         this.wifiScanCallBack = wifiScanCallBack;
     }
-    public interface WifiScanCallBack {
+    public interface WifiReceiverCallBack {
         public void onScanWifi(List<WifiItem> scanResults);
         public void onWifiConnected(String ssId);
     }

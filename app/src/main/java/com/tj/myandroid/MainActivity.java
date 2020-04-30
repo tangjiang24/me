@@ -30,7 +30,7 @@ import com.tj.myandroid.shareelement.ShareElementActivity;
 import com.tj.myandroid.telphone.TelActivity;
 import com.tj.myandroid.timmer.TimmerActivity;
 import com.tj.myandroid.video.VideoPlayActivity;
-import com.tj.myandroid.wifi.WifiViewActivity;
+import com.tj.myandroid.wifi.WIFIActivity;
 
 public class MainActivity extends AppCompatActivity {
     private Context context;
@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_wifi).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(context, WifiViewActivity.class));
+                startActivity(new Intent(context, WIFIActivity.class));
             }
         });
     }

@@ -20,11 +20,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class WifiViewActivity extends AppCompatActivity {
+public class WifiViewActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener, BaseQuickAdapter.OnItemClickListener, BaseQuickAdapter.OnItemChildClickListener, WifiHelper.WifiReceiverCallBack {
     private RecyclerView rvWifi;
     private Switch aSwitch;
     private TextView tvBack;
-    private WifiAdmin wifiAdmin;
     private WifiAdapter wifiAdapter;
     private LinearLayoutManager linearLayoutManager;
     private WifiHelper wifiHelper;
@@ -35,72 +34,24 @@ public class WifiViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wifi_view);
-        dialog = new ProgressDialog(this);
-        dialog.setTitle("dfdfdfdf");
-        dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        dialog.setCanceledOnTouchOutside(false);
-        wifiAdmin = new WifiAdmin(this);
-        wifiHelper = new WifiHelper(this);
         initView();
-        wifiHelper.setWifiScanCallBack(new WifiHelper.WifiScanCallBack() {
-            @Override
-            public void onScanWifi(List<WifiItem> scanResults) {
-                if(isInput){
-                    return;
-                }
-                wifiItems = scanResults;
-                wifiAdapter.setNewData(wifiItems);
-            }
+        wifiHelper = new WifiHelper(this);
+        wifiHelper.setWifiReceiverCallBack(this);
 
-            @Override
-            public void onWifiConnected(String ssId) {
-                wifiHelper.onScanResult();
-            }
-        });
-
-        linearLayoutManager = new LinearLayoutManager(this);
-
-        wifiAdapter = new WifiAdapter();
-        rvWifi.setLayoutManager(linearLayoutManager);
-        rvWifi.setAdapter(wifiAdapter);
-        wifiAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
-            @Override
-            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-                if(view.getId() == R.id.btn_connect){
-                    WifiItem item = wifiItems.get(position);
-
-                    item.setPwdType(WifiAdmin.TYPE_WPA);
-                    connectWifi(item);
-                }
-            }
-        });
-        wifiAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(BaseQuickAdapter adapter, View view, final int position) {
-                final WifiItem item = wifiItems.get(position);
-                if(item.isNoPwd()){
-                    item.setPwdType(WifiAdmin.TYPE_NO_PWD);
-                    connectWifi(item);
-                }else {
-                    WifiConfiguration configuration = wifiAdmin.isExsits(item.getSsid());
-                    if(configuration == null){
-                        RelativeLayout rlPwd = view.findViewById(R.id.rl_pwd);
-                        if(rlPwd.getVisibility() == View.GONE){
-                            setInputing(item,position);
-                            rlPwd.setVisibility(View.VISIBLE);
-                        }else {
-                            exsitInputing();
-                            rlPwd.setVisibility(View.GONE);
-                        }
-                    }else {
-                        connectWifi(item);
-                    }
-                }
-            }
-        });
+        if(WifiAdmin.isWifiEnable(this)){
+            aSwitch.setChecked(true);
+            wifiHelper.onScanResult();
+        }else {
+            aSwitch.setChecked(false);
+        }
     }
 
     private void initView() {
+        dialog = new ProgressDialog(this);
+        dialog.setTitle("");
+        dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        dialog.setCanceledOnTouchOutside(false);
+
         rvWifi = findViewById(R.id.rv_wifi);
         aSwitch = findViewById(R.id.sv);
         tvBack = findViewById(R.id.tv_back);
@@ -110,30 +61,76 @@ public class WifiViewActivity extends AppCompatActivity {
                 WifiViewActivity.super.onBackPressed();
             }
         });
+        aSwitch.setOnCheckedChangeListener(this);
 
-        aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    isInput = false;
-                    wifiAdmin.openWifi();
-                    wifiAdmin.startScan();
-                }else {
-                    wifiAdapter.getData().clear();
-                    wifiAdapter.notifyDataSetChanged();
-                    wifiAdmin.closeWifi();
-                }
-            }
-        });
+        linearLayoutManager = new LinearLayoutManager(this);
+        wifiAdapter = new WifiAdapter();
+        rvWifi.setLayoutManager(linearLayoutManager);
+        rvWifi.setAdapter(wifiAdapter);
+        wifiAdapter.setOnItemClickListener(this);
+        wifiAdapter.setOnItemChildClickListener(this);
+    }
 
-        if(wifiAdmin.isWifiEnable()){
-            aSwitch.setChecked(true);
-            wifiAdmin.startScan();
-            wifiHelper.onScanResult();
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        if(isChecked){
+            isInput = false;
+            WifiAdmin.openWifi(this);
+            WifiAdmin.startScan(this);
         }else {
-            aSwitch.setChecked(false);
+            wifiAdapter.getData().clear();
+            wifiAdapter.notifyDataSetChanged();
+            WifiAdmin.closeWifi(this);
         }
     }
+
+    @Override
+    public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+        if(view.getId() == R.id.btn_connect){
+            WifiItem item = wifiItems.get(position);
+
+            item.setPwdType(WifiAdmin.TYPE_WPA);
+            connectWifi(item);
+        }
+    }
+
+    @Override
+    public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+        final WifiItem item = wifiItems.get(position);
+        if(item.isNoPwd()){
+            item.setPwdType(WifiAdmin.TYPE_NO_PWD);
+            connectWifi(item);
+        }else {
+            WifiConfiguration configuration = WifiAdmin.isExsits(item.getSsid(),this);
+            if(configuration == null){
+                RelativeLayout rlPwd = view.findViewById(R.id.rl_pwd);
+                if(rlPwd.getVisibility() == View.GONE){
+                    setInputing(item,position);
+                    rlPwd.setVisibility(View.VISIBLE);
+                }else {
+                    exsitInputing();
+                    rlPwd.setVisibility(View.GONE);
+                }
+            }else {
+                connectWifi(item);
+            }
+        }
+    }
+
+    @Override
+    public void onScanWifi(List<WifiItem> scanResults) {
+        if(isInput){
+            return;
+        }
+        wifiItems = scanResults;
+        wifiAdapter.setNewData(wifiItems);
+    }
+
+    @Override
+    public void onWifiConnected(String ssId) {
+        wifiHelper.onScanResult();
+    }
+
 
     public void connectWifi(final WifiItem item){
         exsitInputing();
@@ -150,7 +147,7 @@ public class WifiViewActivity extends AppCompatActivity {
             @Override
             public void onConnectFail(String msg) {
                 dialog.dismiss();
-                wifiAdmin.removeWifiBySsid(item.getSsid());
+                WifiAdmin.removeWifiBySsid(item.getSsid(),WifiViewActivity.this);
                 Toast.makeText(WifiViewActivity.this,msg+"连接失败ssid---"+item.getSsid(),Toast.LENGTH_LONG).show();
             }
         });
