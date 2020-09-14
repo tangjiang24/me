@@ -1,0 +1,16 @@
+<resources>
+    <string name="wifiview_connect_succes">网络连接成功</string>
+    <string name="wifiview_connect_fail">连接失败</string>
+    <string name="wifiview_connecting">正在连接</string>
+    <string name="wifiview_connected">已连接</string>
+    <string name="wifiview_connected_to">已连接到%1$s</string>
+    <string name="wifiview_connect_timeout">连接超时</string>
+    <string name="wifiview_not_connected_appoint_net">未连接到指定网络</string>
+    <string name="wifiview_pwd_error">密码错误</string>
+    <string name="wifiview_saved">已保存</string>
+    <string name="wifiview_levle_0">较弱</string>
+    <string name="wifiview_levle_1">一般</string>
+    <string name="wifiview_levle_2">强</string>
+    <string name="wifiview_levle_3">极强</string>
+
+</resources>

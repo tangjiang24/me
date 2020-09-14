@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners android:radius="@dimen/wifiview_button_radius"></corners>
+    <stroke android:width="@dimen/wifiview_stroke_width"
+        android:color="@color/wifiview_white"></stroke>
+</shape>

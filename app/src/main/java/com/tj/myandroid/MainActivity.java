@@ -6,6 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +15,11 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.tj.myandroid.accesbilityservice.AccessbilityActivity;
 import com.tj.myandroid.bindservice.BindServiceActivity;
+import com.tj.myandroid.clearcache.ClearCacheActivity;
 import com.tj.myandroid.download.DownLoadActivity;
 import com.tj.myandroid.fullscresendialog.FullScreenDialogActivity;
 import com.tj.myandroid.greendao.GreenDaoActivity;
@@ -30,7 +33,7 @@ import com.tj.myandroid.shareelement.ShareElementActivity;
 import com.tj.myandroid.telphone.TelActivity;
 import com.tj.myandroid.timmer.TimmerActivity;
 import com.tj.myandroid.video.VideoPlayActivity;
-import com.tj.myandroid.wifi.WIFIActivity;
+import com.tj.myandroid.wifinew.wifi.WIFIActivity;
 
 public class MainActivity extends AppCompatActivity {
     private Context context;
@@ -47,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         context = this;
+        getCacheDir();
         ProtectService.initScreenProtect(this);
         menu = (ImageButton) findViewById(R.id.ib_menu);
         btnTest = (Button) findViewById(R.id.btn_test);
@@ -142,6 +146,19 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(context, WIFIActivity.class));
             }
         });
+        findViewById(R.id.btn_cache).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context, ClearCacheActivity.class));
+            }
+        });
+        findViewById(R.id.btn_setview).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context, ClearCacheActivity.class));
+            }
+        });
+
     }
 
     private void setGuideView() {
@@ -224,10 +241,18 @@ public class MainActivity extends AppCompatActivity {
         guideView.show();
     }
 
+    public void hello(){
+        Toast.makeText(this,"hello",Toast.LENGTH_SHORT).show();
+        Log.e("tj","hello");
+    }
     @Override
     protected void onResume() {
         super.onResume();
 //        setGuideView();
-    }
+}
 
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+    }
 }

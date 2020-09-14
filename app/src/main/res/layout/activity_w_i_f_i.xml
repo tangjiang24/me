@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".wifi.WIFIActivity">
-<com.tj.myandroid.wifi.WifiView
+    android:background="#297dd8"
+    tools:context=".wifinew.wifi.WIFIActivity">
+<com.tj24.wifiview.WifiView
     android:id="@+id/wifi_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"/>

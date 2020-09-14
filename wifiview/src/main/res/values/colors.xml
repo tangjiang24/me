@@ -1,0 +1,8 @@
+<resources>
+    <color name="wifiview_white">#ffffff</color>
+    <color name="wifiview_blue">#32BEFF</color>
+    <color name="wifiview_99white">#99ffffff</color>
+    <color name="wifiview_cancle_stroke">#A0A0A0</color>
+    <color name="wifiview_dialog_bg">#E6000000</color>
+    <color name="wifiview_divide_color">#4D7C7E81</color>
+</resources>

@@ -15,8 +15,7 @@ public class FullScreenDialogActivity extends AppCompatActivity {
         findViewById(R.id.btn_1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FullScreenDialog dialog = new FullScreenDialog(FullScreenDialogActivity.this);
-                dialog.show();
+
             }
         });
     }

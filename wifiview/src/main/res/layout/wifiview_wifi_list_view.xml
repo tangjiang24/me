@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/wifiview_px_60">
+        <TextView
+            android:text="可连接的网络"
+            android:textSize="@dimen/wifiview_text_size_22px"
+            android:layout_marginLeft="@dimen/wifiview_px_20"
+            android:textColor="@color/wifiview_white"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv_refresh"
+                android:src="@drawable/wifiview_ic_refresh"
+                android:layout_marginRight="@dimen/wifiview_px_48"
+                android:layout_toLeftOf="@+id/cb_wifi"
+                android:layout_width="@dimen/wifiview_px_30"
+                android:layout_height="@dimen/wifiview_px_30"/>
+            <CheckBox
+                android:visibility="gone"
+                android:id="@+id/cb_wifi"
+                android:button="@null"
+                android:layout_marginRight="@dimen/wifiview_px_48"
+                android:background="@drawable/wifiview_selector_system_switch_new"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rc_wifi"
+        android:layout_below="@+id/sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>
